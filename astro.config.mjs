@@ -8,7 +8,7 @@ import netlify from "@astrojs/netlify";
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), robotsTxt(), react()],
-  site: 'https://brayanpuentesr.web.app/',
+  site: 'https://brayanpuentes.netlify.app/',
   output: "server",
   adapter: netlify()
 });
