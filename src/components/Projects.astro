@@ -17,10 +17,10 @@ import Laravel from "./icons/Laravel.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
 import { Image } from 'astro:assets';
-import ImageTLteam from "./images/tlteam.png"
-import ImageSH from "./images/shortlinks.png"
-import ImageCMMS from "./images/cmms.png"
-import ImageHC from "./images/hc.png"
+import ImageTLteam from "./images/tlteam.webp"
+import ImageSH from "./images/shortlinks.webp"
+import ImageCMMS from "./images/cmms.webp"
+import ImageHC from "./images/hc.webp"
 
 
 const TAGS = {
@@ -141,8 +141,8 @@ const PROJECTS = [
     PROJECTS.map(({ image, title, description, tags, link, github }) => (
     <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
   <div class="w-full md:w-1/2">
-    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-      <Image alt=`Imagen de Proyecto ${title}` class="object-fill object-top w-full h-56" loading="lazy" src={image} />
+    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-xl lg:border lg:border-white-800 lg:hover:border-white-700 lg:hover:bg-gray-800/50">
+      <Image alt=`Imagen de Proyecto ${title}` class="object-fill object-top w-full h-auto" loading="lazy" src={image} />
     </div>
   </div>
 
