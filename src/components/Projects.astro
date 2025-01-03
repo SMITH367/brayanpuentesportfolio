@@ -1,0 +1,191 @@
+---
+import GitHub from "./icons/GitHub.astro"
+import NextJS from "./icons/NextJS.astro"
+import PHP from "./icons/PHP.astro"
+import CSS from "./icons/CSS.astro"
+import HTML from "./icons/HTML.astro"
+import Tailwind from "./icons/Tailwind.astro"
+import Fav from "./icons/Fav.astro"
+import React from "./icons/React.astro"
+import Node from "./icons/Node.astro"
+import MongoDB from "./icons/MongoDB.astro"
+import Angular from "./icons/Angular.astro"
+import Mysql from "./icons/Mysql.astro"
+import Bootstrap from "./icons/Bootstrap.astro"
+import PostgreSql from "./icons/PostgreSQL.astro"
+import Laravel from "./icons/Laravel.astro"
+import Link from "./icons/Link.astro"
+import LinkButton from "./LinkButton.astro"
+import { Image } from 'astro:assets';
+import ImageTLteam from "./images/tlteam.png"
+import ImageSH from "./images/shortlinks.png"
+import ImageCMMS from "./images/cmms.png"
+import ImageHC from "./images/hc.png"
+
+
+const TAGS = {
+  NEXT: {
+    name: "Next.js",
+    class: "bg-black text-white",
+    icon: NextJS,
+  },
+  MONGO: {
+    name: "MongoDB",
+    class: "bg-white text-green-800",
+    icon: MongoDB,
+  },
+  NODE:{
+    name:"Node.js",
+    class:"bg-white text-black",
+    icon:Node
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: Tailwind,
+  },
+  BOOTSTRAP: {
+    name: "Bootstrap",
+    class: "bg-purple-200 text-black",
+    icon: Bootstrap,
+  },
+  ANGULAR: {
+    name: "Angular",
+    class: "bg-[#003159] text-white",
+    icon: Angular,
+  },
+  MYSQL: {
+    name: "MySQL",
+    class: "bg-blue-200 text-white-200",
+    icon: Mysql,
+  },
+  POSTGRESQL: {
+    name: "PostgreSQL",
+    class: "bg-blue-400 text-white-200",
+    icon: PostgreSql,
+  },
+  PHP: {
+    name: "PHP",
+    class: "bg-[#474A8A] text-white",
+    icon: PHP
+  },
+  LARAVEL: {
+    name: "Laravel",
+    class: "bg-white text-red-800",
+    icon: Laravel
+  },
+  CSS: {
+    name: "CSS",
+    class: "bg-[#2965f1] text-white",
+    icon: CSS
+  },
+  HTML: {
+    name: "HTML",
+    class: "bg-[#f06529] text-white",
+    icon: HTML
+  },
+  ASTRO: {
+    name: "Astro",
+    class: "bg-orange-700 text-white",
+    icon: Fav
+  },
+  REACT: {
+    name: "React",
+    class: "bg-sky-700 text-white",
+    icon: React
+  }
+}
+const PROJECTS = [
+  {
+    title: "Sistema computarizado de gestión de mantenimiento (CMMS)",
+    description:
+      "Proyecto SAAS que ayuda a las empresas a gestionar los procesos y la información de equipos, mantenimientos, proveedeores, clientes, respuestos, etc, de forma centralizada.",
+    link: "https://cmms-biotech.onrender.com/",
+    github: "",
+    image: ImageCMMS,
+    tags: [TAGS.NODE, TAGS.BOOTSTRAP],
+  },
+  {
+    title: "TL TEAM (Academia online)",
+    description:
+      "Academia de educación online gratuita para aprender diferentes habilidades de TI, contiene una recopilación de cursos, rutas de aprendizaje, y los estudiantes pueden dejar sus comentarios en los cursos.",
+    link: "https://tlteam.web.app/",
+    github: "https://github.com/SMITH367/OnlineAcademy",
+    image: ImageTLteam,
+    tags: [TAGS.REACT, TAGS.NODE, TAGS.MONGO],
+  },
+  {
+    title: "Sistema de gestión de historias clínicas",
+    description:
+      "Proyecto de código abierto que permite a consultorios medicos privados gestionar sus pacientes, historias clinicas y recetas, de manera sencilla.",
+    link: "https://historyclinicdemo.web.app/",
+    github: "https://github.com/SMITH367/Clinic-History",
+    image: ImageHC,
+    tags: [TAGS.NODE, TAGS.ANGULAR, TAGS.MYSQL, TAGS.BOOTSTRAP],
+  },
+  {
+    title: "Shortlinks (Acortador de enlaces)",
+    description:
+      "Shortlinks es un sistema para generar url's acortadas, donde los usuarios pueden crear y gestionar sus enlaces acortados, asi como crear enlaces acortados personalizados.",
+    link: "https://sh-link.web.app/",
+    github: "https://github.com/SMITH367/ShortLinks",
+    image: ImageSH,
+    tags: [TAGS.ANGULAR, TAGS.LARAVEL,TAGS.POSTGRESQL],
+  },
+  
+]
+---
+
+<div class="flex flex-col w-full gap-y-16">
+  {
+    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+  <div class="w-full md:w-1/2">
+    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+      <Image alt=`Imagen de Proyecto ${title}` class="object-fill object-top w-full h-56" loading="lazy" src={image} />
+    </div>
+  </div>
+
+  <div class="w-full md:w-1/2 md:max-w-lg">
+    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+      {title}
+    </h3>
+    <div class="flex flex-wrap mt-2">
+      <ul class="flex flex-row mb-2 gap-x-2">
+          {tags.map((tag) => (
+            <li>
+              <span
+                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+              >
+                <tag.icon class="size-4" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
+      <footer class="flex items-end justify-start mt-4 gap-x-4">
+          {github && (
+            <LinkButton href={github}>
+              <GitHub class="size-6" />
+              Código
+              
+            </LinkButton>
+          )}
+          {link && (
+            <LinkButton href={link}>
+              <Link class="size-4" />
+              Vista previa
+            </LinkButton>
+          )}
+        </footer>
+    </div>
+  </div>
+</article>
+    ))
+  }
+</div>
+
+
+

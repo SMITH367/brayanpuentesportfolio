@@ -1,0 +1,66 @@
+---
+import Layout from "../layouts/Layout.astro"
+
+import Briefcase from "../components/icons/Briefcase.astro"
+import CodeIcon from "../components/icons/Code.astro"
+import Chem from "../components/icons/Chem.astro"
+import List from "../components/List.astro"
+import Projects from "../components/Projects.astro"
+import Tecnologys from "../components/Tecnologys.astro"
+import SectionContainer from "../components/SectionContainer.astro"
+import Education from  "../components/icons/Education.astro"
+import Hero from "../components/Hero.astro"
+---
+
+<Layout
+  title="Brayan Puente"
+  description="Porfolio echo para mostrar al mundo mis habilidades y proyectos"
+>
+  <main class="px-4" id="sobre-mi">
+    <SectionContainer class="py-16 md:py-36">
+      <Hero>
+      </slot>
+    </Hero>
+    </SectionContainer>
+    <div class="space-y-24">
+    <SectionContainer id="experiencia">
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+      >
+        <Briefcase class="size-8" />
+        Experiencia laboral
+      </h2>
+      <List typeView={"experiencie"}/>
+    </SectionContainer>
+
+    <SectionContainer id="proyectos">
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+      >
+        <CodeIcon class="size-7" />
+        Proyectos
+      </h2>
+      <Projects />
+    </SectionContainer>
+    <SectionContainer id="formacion">
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+      >
+        <Education class="size-8" />
+        Estudios realizados
+      </h2>
+      <List  typeView={"estudies"}/>
+    </SectionContainer>
+    <SectionContainer id="tecnologias">
+      <h2
+      class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+    >
+      <Chem class="size-7" />
+      Tecnologias
+    </h2>
+    <Tecnologys/>
+    </SectionContainer>
+   
+  </div>
+  </main>
+</Layout>

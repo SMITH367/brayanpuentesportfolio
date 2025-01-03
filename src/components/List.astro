@@ -1,0 +1,88 @@
+---
+import ListItem from "./ListItem.astro"
+
+const EXPERIENCIE = [
+  {
+    date: "Enero 2024 - Julio 2024",
+    title: "Desarrollador web",
+    company: "Always Luxury Experiences Cartagena",
+    description: 
+      "Desarrollé de manera freelance una web para que los clientes reserven botes de esta empresa dedicada al turismo. Tecnologías: Node Js, Tailwind y Javascript.",
+    link:"https://luxuryexperiences.co/"
+  },
+  {
+    date: "Enero 2023 - Diciembre 2023",
+    title: "Ingeniero de software",
+    company: "Red 724 TRADE SAS",
+    description:
+    'Fuí parte del desarrollo del producto "Kapi" que es un servicio para recarga digital de transporte masivo, así como de otros servicios e integraciones tecnológicas de la empresa en el ámbito financiero. Tecnologías: Typescript, React native, Node JS, MySQL, Scrum y micro servicios',
+    link:"https://kapi.com.co/"
+  },
+  {
+    date: "Agosto 2021 - Diciembre 2022",
+    title: "Desarrollador y analista de software",
+    company: "Super Entrega PRO SAS",
+    description:
+      "Participé en el desarrollo de una app web para la gestión de procesos internos y pedidos de los clientes, con el objetivo de optimizar el modelo de negocio de esta empresa de domicilios. Tecnologías: Node js, React Js, MongoDB, web Sockets.",
+    link:"https://www.instagram.com/super_logist_ctg/"
+  },
+  {
+    date: "Enero 2024 - Actualidad",
+    title: "Auxiliar de investigación",
+    company: "Universidad de Cartagena",
+    description:
+      'Desarrollo de proyectos de investigación en beneficio de la universidad y la comunidad tales como "Planteamiento de la arquitectura de software para el módulo administrativo del ERP de la universidad de Cartagena" y "Desarrollo de una propuesta curricular para enseñanza de IA en Colegios de Cartagena"',
+  }
+]
+
+
+const STUDIES = [
+  {
+    date: "Octubre 2020 - Actualidad",
+    title: "Ingeniería de sistemas",
+    company: "",
+    description: "UNIVERSIDAD DE CARTAGENA",
+  },
+  {
+    date: "Mayo 2022 - Diciembre 2022",
+    title: "Desarrollo de software",
+    company: "",
+    description:
+      "UNIVERSIDAD SERGIO ARBOLEDA",
+  },
+  {
+    date: "Febrero 2024 - Julio 2024",
+    title: "AWS Cloud foundations",
+    company: "",
+    description:
+      "AWS ACADEMY",
+  }
+]
+
+let {typeView} = Astro.props
+---
+
+{(typeView == "experiencie") && 
+<ol class="relative mt-16">
+  {
+    
+    EXPERIENCIE.map((experiencie) => (
+      <li class="">
+        <ListItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>
+}
+
+{(typeView == "estudies") && 
+<ol class="relative mt-16">
+  {
+    STUDIES.map((experiencie) => (
+      <li class="">
+        <ListItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>
+}

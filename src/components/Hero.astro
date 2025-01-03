@@ -1,0 +1,60 @@
+---
+const personalImageAlt = "Marco Antonio"
+import Badge from "../components/Badge.astro"
+import LinkedInIcon from "../components/icons/LinkedIn.astro"
+import DownloadCVIcon from "../components/icons/DownloadCV.astro"
+import GithubIcon from "../components/icons/GitHub.astro"
+import SocialPill from "../components/SocialPill.astro"
+---
+
+<div class="max-w-xl flex mx-auto flex-wrap text-left">
+  <div class="flex gap-4 mb-4">
+    <img
+      class="rounded-full shadow-lg size-16"
+      src="https://media.licdn.com/dms/image/v2/D4E03AQHG4lBaq_UXtQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1726535545417?e=1741219200&v=beta&t=sUEy7ajzLAfsq__TNOPSpGkNz2mBbOy1yKBjelwress"
+      alt={personalImageAlt}
+    />
+    <a
+      href="https://www.linkedin.com/in/brayan-puente-ruiz/"
+      target="_blank"
+      rel="noopener"
+      class="flex items-center transition md:justify-center md:hover:scale-105"
+    >
+      <Badge>Disponible para trabajar</Badge>
+    </a>
+  </div>
+  <div>
+    <h1
+    class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
+  >
+    Hola, mi nombre es Brayan Puentes
+  </h1>
+  <span class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 blue-500 to-blue-800 [background-size:_200%_200%] [animation:_gradient-animation_3s_infinite]">
+    Ingeniero de software.
+  </span>
+  <p
+    class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-blue-400 [&>strong]:text-blue-600 [&>strong]:font-semibold dark:text-gray-300"
+  >
+    <strong
+      >Apasionado por la programación y la tecnología</strong
+    > Cuento con más de 2 años de experiencia en el sector.
+    Estoy dispuesto a construir soluciones y a contribuir de manera proactiva con los objetivos que tenga su organización.
+  </p>
+  <nav class="flex flex-wrap gap-4 mt-8">
+    
+    <SocialPill href="https://www.linkedin.com/in/brayan-puente-ruiz/">
+      <LinkedInIcon class="size-5" />
+      LinkedIn
+    </SocialPill>
+    <SocialPill href="https://github.com/SMITH367">
+      <GithubIcon class="size-5" />
+      Github
+    </SocialPill>
+    <SocialPill href="/files/CV-Brayan-Puentes.pdf">
+      <DownloadCVIcon class="size-5" />
+      Descargar CV
+    </SocialPill>
+  </nav>
+  </div>
+  
+</div>
