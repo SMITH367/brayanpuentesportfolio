@@ -4,14 +4,12 @@ import Header from "../components/Header.astro"
 import Footer from "../components/Footer.astro"
 import { getImage } from 'astro:assets'
 import { ViewTransitions } from "astro:transitions"
-import { SpaceBG } from "../components/SpaceBG"
-import faviconSvgSrc from '../components/images/favicon.svg'
+
 
 interface Props {
   title: string
   description: string
 }
-const faviconSvg = await getImage({ src: faviconSvgSrc, format: 'svg' })
 const { description, title } = Astro.props
 ---
 
@@ -21,7 +19,7 @@ const { description, title } = Astro.props
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href={faviconSvg.src} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <ViewTransitions />
